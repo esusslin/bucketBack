@@ -26,6 +26,9 @@ class UsersController < ApplicationController
 
 
 
+
+
+
   def proposal
     @users = User.all
 
