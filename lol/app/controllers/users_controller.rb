@@ -22,6 +22,16 @@ class UsersController < ApplicationController
   		redirect_to @user
 	end
 
+
+
+
+
+  def proposal
+    @users = User.all
+
+    render json: @users
+  end
+
 private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :checking, :savings, :annual, :monthly)

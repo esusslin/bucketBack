@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
+  get '/users/proposal', to: 'users#proposal'
+
 resources :users
 
 	resources :articles do
