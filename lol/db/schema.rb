@@ -15,24 +15,11 @@ ActiveRecord::Schema.define(version: 20170608013456) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.string "commenter"
-    t.text "body"
-    t.bigint "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_comments_on_article_id"
-  end
-
   create_table "proposals", force: :cascade do |t|
     t.string "item"
+    t.float "price"
+    t.float "monthly_payments"
+    t.integer "months"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -52,6 +39,5 @@ ActiveRecord::Schema.define(version: 20170608013456) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "comments", "articles"
   add_foreign_key "proposals", "users"
 end

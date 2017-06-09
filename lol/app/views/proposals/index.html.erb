@@ -1,0 +1,17 @@
+<h1>ALL Pending Proposals</h1>
+ 
+<table>
+  <tr>
+  <th>Item</th>
+    <th>price</th>
+
+  </tr>
+ 
+  <% @proposals.each do |this| %>
+    <tr>
+      <td><%= this.item %></td>
+      <td><%= this.price %></td>
+      <td><%= link_to 'Show', proposal_path(this) %></td>
+    </tr>
+  <% end %>
+</table>
