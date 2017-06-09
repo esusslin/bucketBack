@@ -1,0 +1,33 @@
+<url: user_proposals_path do |f| %>
+  <h1>New Proposal</h1>
+
+<%= form_for :proposal, url: user_proposals_path do |f| %> 
+
+
+<p>
+    <%= f.label :item %><br>
+    <%= f.text_field :item %>
+  </p>
+
+  <p>
+    <%= f.label :price %><br>
+    <%= f.number_field :price, :step => 0.01 %>
+  </p>
+
+    <p>
+    <%= f.label :monthly_payments %><br>
+    <%= f.number_field :monthly_payments, :step => 0.01 %>
+  </p>
+
+  <p>
+    <%= f.label :months %><br>
+    <%= f.number_field :months %>
+  </p>
+
+
+
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

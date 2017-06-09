@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
   get 'welcome/index'
 
-  get '/users/proposal', to: 'users#proposal'
 
-resources :users
+resources :users do 
+	resources :proposals, shallow: true
+end
 
-	resources :articles do
-  		resources :comments
-	end
 
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
